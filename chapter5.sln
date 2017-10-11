@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "5-6", "5-6\5-6.vcxproj", "{
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "丑数", "丑数\丑数.vcxproj", "{1A9D5A90-E73C-4CFE-B9EF-17B8D212A922}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "测试STL", "测试STL\测试STL.vcxproj", "{0D0853B0-1294-4EB6-9329-7AB038492C9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{1A9D5A90-E73C-4CFE-B9EF-17B8D212A922}.Release|x64.Build.0 = Release|x64
 		{1A9D5A90-E73C-4CFE-B9EF-17B8D212A922}.Release|x86.ActiveCfg = Release|Win32
 		{1A9D5A90-E73C-4CFE-B9EF-17B8D212A922}.Release|x86.Build.0 = Release|Win32
+		{0D0853B0-1294-4EB6-9329-7AB038492C9E}.Debug|x64.ActiveCfg = Debug|x64
+		{0D0853B0-1294-4EB6-9329-7AB038492C9E}.Debug|x64.Build.0 = Debug|x64
+		{0D0853B0-1294-4EB6-9329-7AB038492C9E}.Debug|x86.ActiveCfg = Debug|Win32
+		{0D0853B0-1294-4EB6-9329-7AB038492C9E}.Debug|x86.Build.0 = Debug|Win32
+		{0D0853B0-1294-4EB6-9329-7AB038492C9E}.Release|x64.ActiveCfg = Release|x64
+		{0D0853B0-1294-4EB6-9329-7AB038492C9E}.Release|x64.Build.0 = Release|x64
+		{0D0853B0-1294-4EB6-9329-7AB038492C9E}.Release|x86.ActiveCfg = Release|Win32
+		{0D0853B0-1294-4EB6-9329-7AB038492C9E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
