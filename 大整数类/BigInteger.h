@@ -47,6 +47,32 @@ struct BigInteger {
 		}
 		return c;
 	}
+
+	BigInteger operator * (const BigInteger &b) {
+		BigInteger c;
+		BigInteger d;
+		BigInteger e;
+		for (int i = 0; i < b.s.size(); ++i) {
+			d.s.clear();
+			e.s.clear();
+			for (int m = 0; m < i; ++m) {
+				d.s.push_back(0);
+				e.s.push_back(0);
+			}
+			e.s.push_back(0);
+			for (int j = 0; j < s.size(); ++j) {
+				long long g = (long long)b.s[i] * s[j];
+				d.s.push_back(g % BASE);
+				/*if((j < b.s.size() - 1 && )|| g / BASE > 0)*/
+				e.s.push_back(g / BASE);
+			}
+			while (!e.s.back() && e.s.size() > 1) {
+				e.s.pop_back();
+			}
+			c = c + d + e;
+		}
+		return c;
+	}
 };
 
 std::ostream& operator << (std::ostream& os, const BigInteger &x) {
