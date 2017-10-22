@@ -20,7 +20,7 @@ struct BigInteger {
 		} while (num > 0);
 		return *this;
 	}
-	
+
 	BigInteger operator = (std::string &str) {
 		s.clear();
 		int len = (str.size() - 1) / WIDTH + 1;	// -1 保证既在整除时不会多一个
@@ -43,7 +43,7 @@ struct BigInteger {
 			if (i < s.size()) x += s[i];
 			if (i < b.s.size()) x += b.s[i];
 			c.s.push_back(x % BASE);
-			g = x / BASE;			
+			g = x / BASE;
 		}
 		return c;
 	}
@@ -72,6 +72,37 @@ struct BigInteger {
 			c = c + d + e;
 		}
 		return c;
+	}
+
+	bool operator < (const BigInteger &b) const {
+		if (s.size() != b.s.size())
+			return s.size() < b.s.size();
+		for (int i = s.size() - 1; i >= 0; --i) {
+			if (s[i] != b.s[i]) {
+				return s[i] < b.s[i];
+			}
+		}
+		return false;	// 遗忘：全部相等要返回
+	}
+
+	bool operator > (const BigInteger &b) const {
+		return b < *this;
+	}
+
+	bool operator >= (const BigInteger &b) const {
+		return !(*this < b);
+	}
+
+	bool operator <= (const BigInteger &b) const {
+		return !(b < *this);
+	}
+
+	bool operator != (const BigInteger &b) const {
+		return *this < b || b < *this;
+	}
+
+	bool operator == (const BigInteger &b) const {
+		return !(*this < b) && !(b < *this);
 	}
 };
 
