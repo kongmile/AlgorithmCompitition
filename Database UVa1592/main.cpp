@@ -3,11 +3,26 @@
 #include<vector>
 #include<string>
 #include<ctime>;
+#include<set>
+#include<map>
 using namespace std;
 
 const int maxn = 10000;
 const int maxm = 10;
-string table[maxn][maxm];
+int table[maxn][maxm];
+
+map<string, int> IdCache;
+vector<string> strCache;
+
+int Id(string s) {
+	if (IdCache.count(s)) {
+		return IdCache[s];
+	}
+	strCache.push_back(s);
+	int id = strCache.size() - 1;
+	IdCache[s] = id;
+	return id;
+}
 
 int main() {
 #ifdef DEBUG
@@ -24,7 +39,7 @@ int main() {
 			vector<string> v = splitString(row, ",");
 			int j = 0;
 			for (auto s : v) {
-				table[i][j] = s;
+				table[i][j] = Id(s);
 				++j;
 			}
 		}
